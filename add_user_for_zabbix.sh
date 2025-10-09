@@ -98,21 +98,6 @@ main() {
   ensure_token
   c_green "✔ Все действия успешно выполнены."
   cat <<EOF
-
-Подсказка по использованию:
-  • Файл с данными токена: $TOKEN_FILE
-  • В заголовке HTTP используйте:
-      Authorization: PVEAPIToken=<full-tokenid>=<value>
-    где <full-tokenid> и <value> взяты из $TOKEN_FILE
-
-Пример для curl:
-  FULL_TOKEN_ID=\$(awk -F': ' '/full-tokenid/ {print \$2}' $TOKEN_FILE)
-  TOKEN_VALUE=\$(awk -F': ' '/value/ {print \$2}' $TOKEN_FILE)
-  curl -sS \\
-    -H "Authorization: PVEAPIToken=\${FULL_TOKEN_ID}=\${TOKEN_VALUE}" \\
-    https://<pve-host>:8006/api2/json/nodes
-
-EOF
 }
 
 main "$@"
