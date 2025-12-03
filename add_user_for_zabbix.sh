@@ -97,7 +97,7 @@ main() {
   ensure_user
   ensure_token
   c_green "✔ Все действия успешно выполнены."
-  cat <<EOF
+  # cat <<EOF
 }
 
 main "$@"
