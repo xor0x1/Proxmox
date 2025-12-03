@@ -87,17 +87,3 @@ ensure_token() {
   chmod 600 "$TOKEN_FILE"
   c_green "Токен сохранён в файл: $TOKEN_FILE (права 600). Берегите его!"
 }
-
-main() {
-  c_blue "▶ Начинаем подготовку токена для Proxmox API (Zabbix)"
-  require_tools
-  ensure_role
-  ensure_group
-  ensure_acl
-  ensure_user
-  ensure_token
-  c_green "✔ Все действия успешно выполнены."
-  # cat <<EOF
-}
-
-main "$@"
